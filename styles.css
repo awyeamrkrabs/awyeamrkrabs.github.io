@@ -22,14 +22,11 @@ button {
   }
   
   /* Remove extra left and right margins, due to padding in columns */
-  .row {margin: 0 -5px;}
-  
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
+  .row {
+    display: flex;
+    padding: 5px;
   }
+  
   
   .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -37,6 +34,7 @@ button {
     margin: auto;
     text-align: center;
     font-family: arial;
+    flex:40%;
   }
   
   .price {
@@ -47,13 +45,18 @@ button {
   .card button {
     border: none;
     outline: 0;
-    padding: 12px;
+    padding: 15px;
     color: white;
     background-color: #000;
     text-align: center;
     cursor: pointer;
     width: 100%;
     font-size: 18px;
+  }
+  .card p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    color: black;
   }
   
   .card button:hover {
@@ -70,6 +73,5 @@ button {
     width: 29.615861214%;
     padding: 30px 0;
     text-align: center;
-    
   }
   
