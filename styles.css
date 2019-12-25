@@ -22,19 +22,23 @@ button {
   }
   
   /* Remove extra left and right margins, due to padding in columns */
-  .row {
-    display: flex;
-    padding: 5px;
+  .row {margin: 0 -5px;}
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
   }
   
-  
   .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
-    margin: auto;
-    text-align: center;
-    font-family: arial;
-    flex:40%;
+  float: left;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  margin-right: 3.33%;
+  text-align: center;
+  font-family: arial;
   }
   
   .price {
@@ -45,7 +49,7 @@ button {
   .card button {
     border: none;
     outline: 0;
-    padding: 15px;
+    padding: 12px;
     color: white;
     background-color: #000;
     text-align: center;
@@ -53,15 +57,13 @@ button {
     width: 100%;
     font-size: 18px;
   }
-  .card p {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
-    color: black;
-  }
-  
+  .card input{
+    width: 100%;
+}
   .card button:hover {
     opacity: 0.7;
   }
+
   .getränke-kategorien {
     background: #eaeaed;
     overflow: auto;
@@ -73,5 +75,6 @@ button {
     width: 29.615861214%;
     padding: 30px 0;
     text-align: center;
+    
   }
   
