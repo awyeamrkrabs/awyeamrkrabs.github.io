@@ -93,14 +93,15 @@ button {
 
 /* Modal Content */
 .modal-content {
-  background-color: #fefefe;
+  background: #FFF;
   color: black;
   z-index: 9;
   margin: 25%;
-margin-top: 5%;
+  margin-top: 5%;
   padding: 20px;
-  border: 1px solid #888;
+  border: 10px solid #888;
   width: 40%;
+    display: inline-block;
 }
 
 .modal img{
@@ -110,11 +111,17 @@ margin-top: 5%;
     margin-right: auto;
     display: block;
 }
-.modal input{
+
+.buy{
+    align-content: center;
+    margin: 5%;
+    border: 5px solid #000;
+}
+.buy input{
     width: 5%;
     margin: auto;
 }
-.modal button{
+button.button1{
     border: none;
     outline: 0;
     color: white;
@@ -123,12 +130,31 @@ margin-top: 5%;
     cursor: pointer;
     width: 5%;
     font-size: 24px;
+    margin-left: 5%;
   }
-.button2{
+button.button2{
+    border: none;
+    outline: 0;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 5%;
+    font-size: 24px;
+    margin-right: 5%;
+  }
+button.button3{
     background-color: crimson;
     outline: 0;
     color: white;
-    width: 25%;
+    width: 60%;
+    transition-duration: 0.4s;
+
+}
+button.button3:hover{
+    background-color: black;
+    outline: 0;
+    color: white;
 }
 /* The Close Button */
 .close {
