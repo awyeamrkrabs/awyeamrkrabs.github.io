@@ -14,19 +14,19 @@
             function Menge_auswählen(){
                 var menge = prompt("Bitte Menge eingeben", "1");
             }
-            function add(){
-                var i = document.querySelector("#anzahl").value;
+            function add(inputfield){
+                var i = document.querySelector("#" + inputfield).value;
                 if(i==""){
                     i=1;
                 }else{
                     i = parseInt(i,10);
                     i=i+1;
                 }
-                document.querySelector("#anzahl").value = i;
+                document.querySelector("#" + inputfield).value = i;
             }
             
-            function substract(){
-                var i = document.querySelector("#anzahl").value;
+            function substract(inputfield){
+                var i = document.querySelector("#" + inputfield).value;
                 if(i=="0" || i==""){
                     i=1;
                 }else{
@@ -36,79 +36,177 @@
                         i=1;
                     }
                 }
-                document.querySelector("#anzahl").value = i;
+                document.querySelector("#" + inputfield).value = i;
             }
         </script>
 <div class="row">
 <div class="card">
-  <img src="img/feldschlösslichen_bier.jpg" alt="Feldschlösschen" style="width:100%">
+  
+<img src="img/feldschlösslichen_bier.jpg" alt="Feldschlösschen" style="width:100%">
   <h1>Feldschlösschen Pilsner</h1>
   <p class="price">0,57€</p>
-  <p><button id="feld">Zum Einkaufswagen hinzufügen</button></p>
+  <p><button id="buy_feldschlösschen">Zum Einkaufswagen hinzufügen</button></p>
     </div>
+    <div id="modal1" class="modal">
 
-    <div id="myModal" class="modal">
   <!-- Modal content -->
   <div class="modal-content">
-    <span class="close">&times;</span>
+    <span class="close1">&times;</span>
         <img src="img/feldschlösslichen_bier.jpg" alt="Feldschlösschen">
 
     <p>Spicy pilsener taste with a slight hoppy note and a pleasant crispness.<br>
 Alcoholic content 4.9 % vol<br>
 Original gravity: 11.2 %</p>
       <div class="buy">
-      <p><button class="button1" onclick="add()">+</button>
-      <input id="anzahl" type="text">
-      <button class="button2" onclick="substract()">-</button>
+      <p><button class="button1" onclick="add('number_feldschlösschen')">+</button>
+      <input id="number_feldschlösschen" type="text">
+      <button class="button2" onclick="substract('number_feldschlösschen')">-</button>
         <button class="button3" onClick="add_to_basket()">in den Warenkorb</button>
       </p>
-          </div>
-  </div>
-        </div>
+
       
 <script>
     
     
 // Get the modal
-var modal = document.getElementById("myModal");
+var modal1 = document.getElementById("modal1");
 
 // Get the button that opens the modal
-var btn = document.getElementById("feld");
+var btn = document.getElementById("buy_feldschlösschen");
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+var span = document.getElementsByClassName("close1")[0];
 
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
-  modal.style.display = "block";
+  modal1.style.display = "block";
 }
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
-  modal.style.display = "none";
+  modal1.style.display = "none";}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal1) {
+    modal1.style.display = "none";
+  }
+}
+</script>    
+          </div>
+  </div>
+        </div>
+<div class="card">
+<img src="img/becks_bier.png" alt="Becks" style="width:100%">  
+<h1>Becks Pilsner</h1>
+  <p class="price">0,84€</p>
+  <p><button id="buy_becks">Zum Einkaufswagen hinzufügen</button></p>
+    </div>
+
+    <div id="modal2" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close2">&times;</span>
+        <img src="img/becks_bier.png" alt="Becks">
+<p>Mit Becks wählst du ein Bier, dass zu dir passt.<br>
+Alcoholic content 4.7 % vol<br>
+Original gravity: 10.9 %</p>
+      <div class="buy">
+      <p><button class="button1" onclick="add('number_becks')">+</button>
+      <input id="number_becks" type="text">
+      <button class="button2" onclick="substract('number_becks')">-</button>
+        <button class="button3" onClick="add_to_basket()">in den Warenkorb</button>
+      </p>
+
+        
+<script>
+    
+    
+// Get the modal
+var modal2 = document.getElementById("modal2");
+
+// Get the button that opens the modal
+var btn = document.getElementById("buy_becks");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close2")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal2.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal2.style.display = "none";
 }
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == modal) {
-    modal.style.display = "none";
+    modal2.style.display = "none";
   }
 }
-</script>    
+</script>
+          </div>
+  </div>
+        </div>
+        
+<div class="card">
+<img src="img/budweiser_bier.jpg" alt="Budweiser" style="width:100%">  
+<h1>Budweiser Budvar</h1>
+  <p class="price">0,89€</p>
+  <p><button id="buy_budweiser">Zum Einkaufswagen hinzufügen</button></p>
+    </div>
+
+    <div id="modal3" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close3">&times;</span>
+        <img src="img/budweiser_bier.jpg" alt="Budweiser">
+<p>Hop, water from deep Artesian wells of 300m depth, Moravian malt, brewers' unique skills and long maturing in lager cellars. A lager that makes a good reputation to the Czech beer brewing industry all over the world.<br>
+Alcoholic content 5.0 % vol<br>
+Original gravity: 10.9 %</p>
+      <div class="buy">
+      <p><button class="button1" onclick="add('number_budweiser')">+</button>
+      <input id="number_budweiser" type="text">
+      <button class="button2" onclick="substract('number_budweiser')">-</button>
+        <button class="button3" onClick="add_to_basket()">in den Warenkorb</button>
+      </p>
 
         
-<div class="card">
-  <img src="img/becks_bier.png" alt="Becks" style="width:100%">
-  <h1>Becks Pilsner</h1>
-  <p class="price">0,84€</p>
-    <p><button>Zum Einkaufswagen hinzufügen</button></p>
-</div>
-        
-<div class="card">
-  <img src="img/budweiser_bier.jpg" alt="Budweiser" style="width:100%">
-  <h1>Budweiser Budvar</h1>
-  <p class="price">0,89€</p>
-  <p><button>Zum Einkaufswagen hinzufügen</button></p>
-</div>
+<script>
+    
+    
+// Get the modal
+var modal3 = document.getElementById("modal3");
+
+// Get the button that opens the modal
+var btn = document.getElementById("buy_budweiser");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close3")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal3.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal3.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal3.style.display = "none";
+  }
+}
+</script>        
+          </div>
+  </div>
+        </div>            
+
 </div>
 </html>
