@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<meta charset="UTF-8" lang="DE">
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css?family=Lexend+Deca&display=swap" rel="stylesheet">
+        <title>Weine | Getränkeshop</title>
+        <script>
+            function Menge_auswählen() {
+                var menge = prompt("Bitte Menge eingeben", "1");
+            }
+            function add() {
+                var i = document.querySelector("#anzahl").value;
+                if(i=="") {
+                    i=1;
+                } else {
+                    i = parseInt(i,10);
+                    i=i+1;
+                }
+                document.querySelector("#anzahl").value = i;
+            }
+            
+            function substract(){
+                var i = document.querySelector("#anzahl").value;
+                if(i=="0" || i==""){
+                    i=1;
+                }else{
+                    i = parseInt(i,10);
+                    i=i-1;
+                    if(i==0){
+                        i=1;
+                    }
+                }
+                document.querySelector("#anzahl").value = i;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Unsere Weine</h1>
+        <h2>Bitte wählen Sie Ihren Wein.</h2>
+        <div class = "row">
+            <div class="card">
+                <img src="img/palacios_wein.png" alt="Placios Priorat L'Ermita" style="width:15%">
+                <h1>Palacios Priorat L'Ermita</h1>
+                <p class="price">€1990,00</p>
+                <p>Wahre Größe aus dem Priorat</p>
+                <p><button id="feld">Zum Warenkorb hinzufügen</button></p>
+            </div>
+            <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                      <img src="img/palacios_wein.png" alt="Placios Priorat L'Ermita" style="width: auto">
+              
+                  <p>Spicy pilsener taste with a slight hoppy note and a pleasant crispness.<br>
+              Alcoholic content 4.9 % vol<br>
+              Original gravity: 11.2 %</p>
+                    <div class="buy">
+                    <p><button class="button1" onclick="add()">+</button>
+                    <input id="anzahl" type="text">
+                    <button class="button2" onclick="substract()">-</button>
+                      <button class="button3" onClick="add_to_basket()">in den Warenkorb</button>
+                    </p>
+                        </div>
+                </div>
+                      </div>
+                    
+              <script>
+                  
+                  
+              // Get the modal
+              var modal = document.getElementById("myModal");
+              
+              // Get the button that opens the modal
+              var btn = document.getElementById("feld");
+              
+              // Get the <span> element that closes the modal
+              var span = document.getElementsByClassName("close")[0];
+              
+              // When the user clicks the button, open the modal 
+              btn.onclick = function() {
+                modal.style.display = "block";
+              }
+              
+              // When the user clicks on <span> (x), close the modal
+              span.onclick = function() {
+                modal.style.display = "none";
+              }
+              
+              // When the user clicks anywhere outside of the modal, close it
+              window.onclick = function(event) {
+                if (event.target == modal) {
+                  modal.style.display = "none";
+                }
+              }
+              </script>    
+            <div class="card">
+                <img src="img/bebame_tinto_wein.png" alt="Bebame Tinto" style="width:15%">
+                <h1>Bebame Tinto</h1>
+                <p class="price">€3,95</p>
+                <p>Aufmachen, einschenken, genießen!</p>
+                <p><button id="feld2">Zum Warenkorb hinzufügen</button></p>
+            </div>
+            
+            
+            <div class="card">
+                <img src="img/torres_wein.png" alt="Torres Natuero Tinto 2017" style="width:15%">
+                <h1>Torres Natuero Tinto 2017</h1>
+                <p class="price">€8,50</p>
+                <p>Alkoholreduzierter Syrah von Torres!</p>
+                <p><button>Zum Warenkorb hinzufügen</button></p>
+            </div>
+         </div>
+    </body>
+</html>
