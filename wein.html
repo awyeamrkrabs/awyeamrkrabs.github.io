@@ -5,6 +5,21 @@
         <link rel="stylesheet" href="styles.css">
         <link href="https://fonts.googleapis.com/css?family=Lexend+Deca&display=swap" rel="stylesheet">
         <title>Wein</title>
+
+        <script>
+          function add_to_basket(name, anzahl){
+            if (localStorage.getItem(name) !=null)
+			        {
+                var bisherige_anzahl = localStorage.getItem(name);
+                var summe = Number(anzahl) + Number(bisherige_anzahl);
+                localStorage.setItem(name, summe);
+              }
+            else localStorage.setItem(name, anzahl);
+            
+            alert("Zum Warenkorb hinzugefügt.");
+          }
+        </script>
+
     </head>
     <body>
         <h1>Unsere Weine</h1>
@@ -60,7 +75,7 @@
       <p><button class="button1" onclick="add('number_palacios')">+</button>
       <input id="number_palacios" type="text">
       <button class="button2" onclick="substract('number_palacios')">-</button>
-        <button class="button3" onclick="add_to_basket()">in den Warenkorb</button>
+        <button class="button3" onclick="add_to_basket('palacios', number_palacios.value)">in den Warenkorb</button>
       </p>
 
       
@@ -113,7 +128,7 @@ window.onclick = function(event) {
       <p><button class="button1" onclick="add('number_tinto')">+</button>
       <input id="number_tinto" type="text">
       <button class="button2" onclick="substract('number_tinto')">-</button>
-        <button class="button3" onclick="add_to_basket()">in den Warenkorb</button>
+        <button class="button3" onclick="add_to_basket('tinto', number_tinto.value)">in den Warenkorb</button>
       </p>
 
         
@@ -168,7 +183,7 @@ window.onclick = function(event) {
       <p><button class="button1" onclick="add('number_torres')">+</button>
       <input id="number_torres" type="text">
       <button class="button2" onclick="substract('number_torres')">-</button>
-        <button class="button3" onclick="add_to_basket()">in den Warenkorb</button>
+        <button class="button3" onclick="add_to_basket('torres', number_torres.value)">in den Warenkorb</button>
       </p>
 
         
@@ -205,5 +220,9 @@ window.onclick = function(event) {
   </div>
         </div>            
 
+</div>
+<div class="card">
+    <p><button onclick="location.href = 'Warenkorb.html'">Zum Warenkorb</button></p>
+    <button onclick= "location.href = 'index.html'">Zurück zur Homepage</button>
 </div>
 </html>

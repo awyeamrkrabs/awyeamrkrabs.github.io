@@ -4,18 +4,72 @@
     <head>
         <link rel="stylesheet" href="styles.css">
         <link href="https://fonts.googleapis.com/css?family=Lexend+Deca&display=swap" rel="stylesheet">
-        <title>Getränkeshop</title>
+       
+        <title>Warenkorb</title>
+
     </head>
+
+
     <body>
-        <h1>Herzlich Willkommen zu unserem Shop!</h1>
-        <h1>Warenkorb</h1> 
+        <p id="warenkorb"></p>
+        <h1 style="text-align: center;">Ihre Warenkorb</h1>
+
+        <script>
+            var kw1 = (localStorage.getItem('palacios')*1999.00).toFixed(2);
+            var kw2 = (localStorage.getItem('tinto')*3.95).toFixed(2);
+            var kw3 = (localStorage.getItem('torres')*8.50).toFixed(2);
+            var kw4 = (localStorage.getItem('feld')*0.57).toFixed(2);
+            var kw5 = (localStorage.getItem('becks')*0.84).toFixed(2);
+            var kw6 = (localStorage.getItem('bud')*0.89).toFixed(2);
+            var total = 0;
+        if (localStorage.getItem('palacios') !=null) {
+        document.write("<b>Palacios Priorat L'Ermita</b> </br>Anzahl im Warenkorb: "+localStorage.getItem('palacios')+
+        "</br>Gesamtpreis: "+kw1+" €" + "</br></br>");
+        total += 1999.00 * (localStorage.getItem('palacios'));
+        }
+
+        if (localStorage.getItem('tinto') !=null) {
+        document.write("<b>Bebame Tinto</b> </br>Anzahl im Warenkorb: "+localStorage.getItem('tinto')+
+        "</br>Gesamtpreis: "+kw2+" €" + "</br></br>"); 
+        total += 3.95 * (localStorage.getItem('tinto'));
+        }
+
+        if (localStorage.getItem('torres') !=null) {
+        document.write("<b>Torres Natuero Tinto 2017</b> </br>Anzahl im Warenkorb: "+localStorage.getItem('torres')+
+        "</br>Gesamtpreis: "+kw3+" €" + "</br></br>"); 
+        total+=8.50 * (localStorage.getItem('torres'));
+        }
+
+        if (localStorage.getItem('feld') !=null) {
+        document.write("<b>Feldschlösschen Pilsner</b> </br>Anzahl im Warenkorb: "+localStorage.getItem('feld')+
+        "</br>Gesamtpreis: "+kw4+" €" + "</br></br>");
+        total+=0.57 * (localStorage.getItem('feld'));
+        }
+
+        if (localStorage.getItem('becks') !=null) {
+        document.write("<b>Becks Pilsner</b> </br>Anzahl im Warenkorb: "+localStorage.getItem('becks')+
+        "</br>Gesamtpreis: "+kw5+" €" + "</br></br>");
+        total+=0.84*(localStorage.getItem('becks'));
+        }
+
+        if (localStorage.getItem('bud') !=null) {
+        document.write("<b>Budweiser Budvar</b> </br>Anzahl im Warenkorb: "+localStorage.getItem('bud')+
+        "</br>Gesamtpreis: "+kw6+" €" + "</br></br>");
+        total+=0.89*(localStorage.getItem('bud'));
+        }
+
+        document.write("<b>Gesamtpreis: </b>" + (total).toFixed(2) + " €");
+        </script>
+
         <div class="shopping_cart">
-            <img src="img/feldschlösslichen_bier.jpg" alt="Feldschlösschen">
-            <p> Feldschlösschen Pilsner</p>
-            <p> Anzahl</p>
-            <p> Preis</p>
-            <button>Löschen</button>
-        
+            
+            <p><button onclick="localStorage.clear(); location.href = 'Warenkorb.html'">Warenkorb leeren</button></p>
+            
+        </div>
+        <div class="card">
+            
+            <button onclick= "location.href = 'index.html'">Zurück zur Homepage</button>
+           
         </div>
     </body>
 </html>
