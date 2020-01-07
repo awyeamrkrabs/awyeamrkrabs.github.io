@@ -170,3 +170,31 @@ button.button3:hover{
   text-decoration: none;
   cursor: pointer;
 }
+
+.shopping_cart{
+  background: #FFF;
+  color: black;
+  margin: auto;
+    width: 400px;
+    line-height: 0.9;
+}
+.shopping_cart img{
+    width: 100px;
+    height: 100px;
+    float: left;
+    
+}
+.shopping_cart button{
+    border: none;
+    outline: 0;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+}
+
+.shopping_cart button:hover{
+    background-color: red;
+    outline: 0;
+    color: white;
+}
